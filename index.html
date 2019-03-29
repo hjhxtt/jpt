@@ -269,23 +269,49 @@
 <script type="text/javascript">
     $(function(){
         $('.footer').css('opacity','0');
-    })
-</script>
-<script type="text/javascript">
 
         document.onreadystatechange = completeLoading;
 
         function completeLoading() {
-                if (document.readyState =="complete") {
-                        document.getElementById('main_loading').style.opacity="0";
-                        setTimeout(function(){
-                            document.getElementById('main_loading').style.display="none";
-                        },2000)
-                }
-                else{
-                        document.getElementById('main_loading').style.display="block";
-                }
+            console.log(document.readyState);
+            
+        if (document.readyState !== "complete") {
+             setTimeout(function () {
+                $('#main_loading').css('opacity', '0')
+            }, 3000)
+            setTimeout(function () {
+                document.getElementById('main_loading').style.display = "none";
+            }, 5000)
+            console.log(1);
+            return
+            
         }
+            else{
+            document.getElementById('main_loading').style.display = "none";
+            }
+            console.log(2);
+            
+        }
+        completeLoading()
+
+       
+    })
+</script>
+<script type="text/javascript">
+
+        // document.onreadystatechange = completeLoading;
+
+        // function completeLoading() {
+        //         if (document.readyState =="complete") {
+        //                 document.getElementById('main_loading').style.opacity="0";
+        //                 setTimeout(function(){
+        //                     document.getElementById('main_loading').style.display="none";
+        //                 },2000)
+        //         }
+        //         else{
+        //                 document.getElementById('main_loading').style.display="block";
+        //         }
+        // }
 </script>
 </body>
 </html>
